@@ -18,7 +18,6 @@ plugin.type = 'FORMAT';
  * @type {Object}
  */
 plugin.format = {
-    'name': 'image-fbi',
     'display_name': 'Image (JPG, PNG)',
     'download': true,
     'start_command': 'sudo fbi -a --noverbose -T 1 $filepath',
