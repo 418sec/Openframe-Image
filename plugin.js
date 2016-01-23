@@ -1,5 +1,6 @@
 
-var plugin = module.exports = {};
+var plugin = module.exports = {},
+    format;
 
 // Do we need this? Are there other plugin-y config things?
 plugin.config = {
@@ -7,7 +8,7 @@ plugin.config = {
 };
 
 // TODO: should this be a constant, supplied by a base module?
-plugin.type = 'FORMAT';
+// plugin.type = 'FORMAT';
 
 /**
  * If this plugin is adding a new artwork format, the format definition
@@ -17,7 +18,7 @@ plugin.type = 'FORMAT';
  *
  * @type {Object}
  */
-plugin.format = {
+format = {
     'display_name': 'Image (JPG, PNG)',
     'download': true,
     'start_command': 'sudo fbi -a --noverbose -T 1 $filepath',
@@ -36,5 +37,6 @@ plugin.format = {
  */
 plugin.init = function(fc) {
     // do your plugin thing
-    console.log('=======>   PluginExample initialized!   <=======');
+    console.log('=======>   Openframe-Image initialized!   <=======');
+    fc.addFormat(format);
 };
