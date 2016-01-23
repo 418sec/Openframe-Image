@@ -11,6 +11,12 @@ arq=$(uname -m)
 if [ $os == "Linux" ]; then
 
     # on Debian Linux distributions
+    sudo apt-get update
+    # do we really want to upgrade? this could take a damn long time.
+    sudo apt-get upgrade
+
+    # same for any debian disto, including rpi (untested)
+    sudo apt-get install fbi
 
     if [ $arq == "armv7l" ]; then
         # on RaspberryPi

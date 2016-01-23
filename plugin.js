@@ -39,8 +39,3 @@ plugin.init = function(fc) {
     // do your plugin thing
     console.log('=======>   PluginExample initialized!   <=======');
 };
-
-// TODO - Do we want this? Or can we rely on the deps from package.json?
-plugin.dependencies = {
-  // 'openframe-gpio': 'git+https://git@github.com/OpenframeProject/Openframe-PluginExample.git'
-};
