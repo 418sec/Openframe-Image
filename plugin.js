@@ -1,5 +1,7 @@
 
-var plugin = module.exports = {},
+
+var pjson = require('./package.json'),
+    plugin = module.exports = {},
     format;
 
 // Do we need this? Are there other plugin-y config things?
@@ -19,6 +21,9 @@ plugin.config = {
  * @type {Object}
  */
 format = {
+    // the name should be the same as the package name
+    'name': pjson.name,
+    // this is what might get displayed to users
     'display_name': 'Image (JPG, PNG)',
     'download': true,
     'start_command': 'sudo fbi -a --noverbose -T 1 $filepath',
@@ -38,5 +43,7 @@ format = {
 plugin.init = function(fc) {
     // do your plugin thing
     console.log('=======>   Openframe-Image initialized!   <=======');
+    // console.log('fc', fc);
+    console.log('format', format);
     fc.addFormat(format);
 };
