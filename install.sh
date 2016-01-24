@@ -15,7 +15,7 @@ if [ $os == "Linux" ]; then
     # do we really want to upgrade? this could take a damn long time.
     sudo apt-get upgrade
 
-    # same for any debian disto, including rpi (untested)
+    # same for any debian disto (untested), including rpi (tested)
     sudo apt-get install fbi
 
     if [ $arq == "armv7l" ]; then

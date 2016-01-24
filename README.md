@@ -2,8 +2,6 @@
 
 # Openframe Image
 
-An Openframe FORMAT plugin which enables display of static images.
-
-This is one of the default FORMATs.
+An Openframe format plugin which enables display of static images.
 
 For info on developing your own plugins, see the [Openframe-PluginExample](https://github.com/OpenframeProject/Openframe-PluginExample) repo.
