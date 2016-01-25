@@ -15,7 +15,7 @@ plugin.config = {
  */
 plugin.init = function(ofPluginApi) {
     // do your plugin thing
-    console.log('=======>   Openframe-glslViewer initialized!   <=======');
+    console.log('=======>   Openframe-Image initialized!   <=======');
 
     /**
      * Plugins can add new artwork formats to the frame.
