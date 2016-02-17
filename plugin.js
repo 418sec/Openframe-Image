@@ -1,11 +1,6 @@
 var pjson = require('./package.json'),
     plugin = module.exports = {};
 
-// Currently unused... but maybe a good idea?
-plugin.config = {
-    platform: 'rpi'
-};
-
 /**
  * Plugin initialization method.
  *
@@ -31,8 +26,7 @@ plugin.init = function(ofPluginApi) {
             'display_name': 'Image (JPG, PNG)',
             'download': true,
             'start_command': 'sudo fbi -a --noverbose -T 1 $filepath',
-            'end_command': 'sudo pkill -f fbi',
-            'tags': ['image']
+            'end_command': 'sudo pkill -f fbi'
         }
     );
 
