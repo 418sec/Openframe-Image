@@ -1,6 +1,6 @@
 {
   "name": "openframe-image",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Openframe FORMAT plugin which adds support for image display.",
   "main": "plugin.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
   },
   "keywords": [
-    "openframe","openframe-image","format"
+    "openframe",
+    "openframe-image",
+    "format"
   ],
   "author": {
     "name": "Jonathan Wohl",
