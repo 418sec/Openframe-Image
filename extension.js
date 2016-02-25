@@ -3,7 +3,7 @@ var pjson = require('./package.json'),
     extension = module.exports = {};
 
 /**
- * Plugin initialization method.
+ * Extension initialization method.
  *
  * Called when the extension (and its dependencies) have been installed.
  *
@@ -14,7 +14,7 @@ extension.init = function(OF) {
     debug('=======>   Openframe-Image initialized!   <=======');
 
     /**
-     * Plugins can add new artwork formats to the frame.
+     * Extensions can add new artwork formats to the frame.
      *
      * Each format must have a unique name, which should correspond to the
      * name of the npm package.
@@ -35,7 +35,7 @@ extension.init = function(OF) {
     );
 
     /**
-     * Plugins also have access to the global event system
+     * Extensions also have access to the global event system
      */
     extension.pubsub = OF.getPubsub();
 };
