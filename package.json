@@ -1,7 +1,7 @@
 {
   "name": "openframe-image",
   "version": "0.1.1",
-  "description": "Openframe FORMAT plugin which adds support for image display.",
+  "description": "Openframe plugin which adds support for images via fbi.",
   "main": "plugin.js",
   "scripts": {
     "install": "./install.sh",
@@ -37,5 +37,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/OpenframeProject/Openframe-Image"
+  },
+  "dependencies": {
+    "debug": "^2.2.0"
   }
 }
