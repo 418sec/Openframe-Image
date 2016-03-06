@@ -28,7 +28,7 @@ extension.init = function(OF) {
             // does this type of artwork need to be downloaded to the frame?
             'download': true,
             // how do start this type of artwork? currently two token replacements, $filepath and $url
-            'start_command': 'sudo fbi -a --noverbose -T 1 $filepath',
+            'start_command': 'sudo fbi --noverbose -T 1 $filepath',
             // how do we stop this type of artwork?
             'end_command': 'sudo pkill -f fbi'
         }
