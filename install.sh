@@ -16,7 +16,7 @@ if [ $os == "Linux" ]; then
     # sudo apt-get upgrade
 
     # same for any debian disto (untested), including rpi (tested)
-    sudo apt-get install fbi
+    sudo apt-get install -y fbi
 
     if [ $arq == "armv7l" ]; then
         # on RaspberryPi
