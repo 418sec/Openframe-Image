@@ -11,7 +11,9 @@ arq=$(uname -m)
 if [ $os == "Linux" ]; then
 
     # on Debian Linux distributions
-    sudo apt-get update
+    # Unlikely that people will be doing this as a separate install, since it comes with
+    # (and will be updated with) openframe
+    # sudo apt-get update
     # do we really want to upgrade? this could take a damn long time.
     # sudo apt-get upgrade
 
