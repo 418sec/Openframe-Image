@@ -33,10 +33,5 @@ extension.init = function(OF) {
             'end_command': 'sudo pkill -f fbi'
         }
     );
-
-    /**
-     * Extensions also have access to the global event system
-     */
-    extension.pubsub = OF.getPubsub();
 };
 
