@@ -1,7 +1,7 @@
 {
   "name": "openframe-image",
   "version": "0.1.8",
-  "description": "Openframe plugin which adds support for images via fbi.",
+  "description": "Openframe extension which adds support for images via fbi.",
   "main": "extension.js",
   "scripts": {
     "install": "./install.sh",
