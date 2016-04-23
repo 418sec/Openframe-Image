@@ -4,11 +4,17 @@
 
 echo "Installing glslViewer..."
 
+if ! [ -z "$TRAVIS" ]; then
+    echo "TRAVIS env, don't install"
+    exit 0
+fi
+
 os=$(uname)
 arq=$(uname -m)
 
 # does glslViewer already exist?
 if hash glslViewer 2>/dev/null; then
+    echo "glslViewer already installed."
     exit 0
 fi
 
