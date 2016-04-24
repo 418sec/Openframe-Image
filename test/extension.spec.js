@@ -31,4 +31,28 @@ describe('properties', function() {
         assert(format.end_command);
         assert(typeof format.end_command === 'string');
     });
+
+    it('start_command should default to fill aspect mode', function() {
+        var format = ImageExtension.props.format,
+            command = format.start_command(),
+            dir = __dirname.substring(0, __dirname.length - 5),
+            expected = 'glslViewer ' + dir + '/frags/fill.frag $filepath';
+
+        assert(typeof command === 'string');
+        assert.equal(command, expected);
+    });
+
+    it('should allow override of aspect mode in start_command', function() {
+        var format = ImageExtension.props.format,
+            config = {
+                '--aspect-mode': 'fit'
+            },
+            command = format.start_command(config),
+            dir = __dirname.substring(0, __dirname.length - 5),
+            expected = 'glslViewer ' + dir + '/frags/fit.frag $filepath';
+
+        assert(typeof command === 'string');
+        assert.equal(command, expected);
+    });
+
 });

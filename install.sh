@@ -2,41 +2,65 @@
 #
 # Be VERY Careful. This script may be executed with admin privileges.
 
-echo "Openframe Image -- install.sh"
+echo "Installing glslViewer..."
 
-# Some limited platform detection might be in order... though at present we're targeting the Pi
+if ! [ -z "$TRAVIS" ]; then
+    echo "TRAVIS env, don't install"
+    exit 0
+fi
+
 os=$(uname)
 arq=$(uname -m)
 
+# does glslViewer already exist?
+if hash glslViewer 2>/dev/null; then
+    echo "glslViewer already installed."
+    exit 0
+fi
+
 if [ $os == "Linux" ]; then
 
-    # on Debian Linux distributions
-    # Unlikely that people will be doing this as a separate install, since it comes with
-    # (and will be updated with) openframe
+    # on Linux distributions
     # sudo apt-get update
-    # do we really want to upgrade? this could take a damn long time.
+    # do we want to upgrade? this could take a damn long time.
     # sudo apt-get upgrade
 
-    # same for any debian disto (untested), including rpi (tested)
-    sudo apt-get install -y fbi
-
+    # on RaspberryPi
     if [ $arq == "armv7l" ]; then
-        # on RaspberryPi
-
-        # ####
-        #
-        # FOR NOW, CODE GOES HERE since we're shooting for RPi support
-        #
-        # ####
-        echo "armv7l"
-
-
+        sudo cp ./bin/glslViewer /usr/local/bin/
+        sudo chmod +x /usr/local/bin/glslViewer
     else
-        # Non-arm7 Debian...
-        echo "non armv7l"
+        sudo apt-get install git-core cmake xorg-dev libglu1-mesa-dev
+        git clone https://github.com/glfw/glfw.git
+        cd glfw
+        cmake .
+        make
+        sudo make install
+        cd ..
+        git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+        cd glslViewer
+        make
+        sudo make install
     fi
 
+
 elif [ $os == "Darwin" ]; then
-    # OSX
+
+    # ON MacOX
     echo "osx"
+
+    if [ ! -e /usr/local/bin/brew ]; then
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+
+    brew update
+    # do we really want to upgrade? this could take a damn long time.
+    brew upgrade
+    brew tap homebrew/versions
+    brew install glfw3 pkg-config
+    git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+    rm -rf !$/.git
+    cd glslViewer
+    make
+    make install
 fi
