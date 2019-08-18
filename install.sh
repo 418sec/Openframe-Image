@@ -25,10 +25,12 @@ if [ $os == "Linux" ]; then
     # do we want to upgrade? this could take a damn long time.
     # sudo apt-get upgrade
 
-    # on RaspberryPi
     if [ $arq == "armv7l" ]; then
-        sudo cp ./bin/glslViewer /usr/local/bin/
-        sudo chmod +x /usr/local/bin/glslViewer
+        # on RaspberryPi 2/3
+        sudo apt-get install glslviewer
+    elif [ $arq == "armv6l" ]; then
+        # on RaspberryPi A/B
+        sudo apt-get install glslviewer
     else
         sudo apt-get install git-core cmake xorg-dev libglu1-mesa-dev
         git clone https://github.com/glfw/glfw.git
