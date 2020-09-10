@@ -34,7 +34,7 @@ if [ $os == "Linux" ]; then
         pi4[c03111]=1
         if [ ${pi4[$rev]} == 1 ]; then
             sudo apt-get install libegl1-mesa-dev libgbm-dev libgles2-mesa-dev
-            git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+            git clone --depth=1 --branch=master https://github.com/patriciogonzalezvivo/glslViewer glslViewer
             cd glslViewer
             make
             sudo make install
@@ -52,7 +52,7 @@ if [ $os == "Linux" ]; then
         make
         sudo make install
         cd ..
-        git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+        git clone --depth=1 --branch=master https://github.com/patriciogonzalezvivo/glslViewer glslViewer
         cd glslViewer
         make
         sudo make install
@@ -73,7 +73,7 @@ elif [ $os == "Darwin" ]; then
     brew upgrade
     brew tap homebrew/versions
     brew install glfw3 pkg-config
-    git clone --depth=1 --branch=master http://github.com/patriciogonzalezvivo/glslViewer glslViewer
+    git clone --depth=1 --branch=master https://github.com/patriciogonzalezvivo/glslViewer glslViewer
     rm -rf !$/.git
     cd glslViewer
     make
